@@ -33,6 +33,7 @@
     "grunt-jasmine-node-coverage-validation": "0.0.4"
   },
   "dependencies": {
-
+    "airbrake": "^0.3.8",
+    "lodash": "^2.4.1"
   }
 }
