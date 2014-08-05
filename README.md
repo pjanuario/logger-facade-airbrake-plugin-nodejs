@@ -58,9 +58,10 @@ log.error("Message to log %s", 'with args');
 console.log("End sample...");
 ```
 
-Download the code from this [gist]().
+Download the code from this [gist](https://gist.github.com/pjanuario/713e7f46112f77adca5e).
 
-# Contributing
+## Contribution
+
 Bug fixes and new features are of course very welcome!
 
 To get started developing:
@@ -69,6 +70,43 @@ To get started developing:
  - Run the test suite with ```npm test```
 
 Please accompany any Pull Requests with the relevant test cases and make sure everything else still passes :).
+
+### Contribution Flow
+
+1. Fork it
+2. Create your feature branch (`git checkout -b my-new-feature`)
+3. Commit your changes (`git commit -am 'Add some feature'`)
+4. Push to the branch (`git push origin my-new-feature`)
+5. Create new Pull Request
+
+### Bump versioning
+
+We use [grunt bump package](https://www.npmjs.org/package/grunt-bump) to control package versioning.
+
+Bump Patch version
+
+    $ grunt bump
+
+Bump Minor version
+
+    $ grunt bump:minor
+
+Bump Major version
+
+    $ grunt bump:major
+
+### Running Specs
+
+    $ npm test
+
+### Coverage Report
+
+We aim for 100% coverage and we hope it keeps that way! :)
+We use pre-commit and pre-push hooks and CI to accomplish this, so don't mess with our build! :P
+
+Check the report after running npm test.
+
+    $ open ./coverage/lcov-report/index.html
 
 # Credits
 Shout out to @pjanuario.
