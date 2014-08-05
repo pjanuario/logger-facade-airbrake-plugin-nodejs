@@ -30,6 +30,23 @@ var LoggerAirbrakePlugin = require('logger-facade-airbrake-plugin');
 
 console.log("Start sample of Async error Log...");
 
+var config = {
+  //api key, default (null)
+  apiKey: "apikey",
+  // host, default (null)
+  host: "api.airbrake.io",
+  // port, default (80)
+  port: 80,
+  // protocol, default (http)
+  protocol: 'http',
+  // notify uncaught excpetions, default (false)
+  notifyUncaughtException: false,
+  // dev envs, default (['development', 'test'])
+  developmentEnvironments: ['development', 'test'],
+  // appVersion, default (null)
+  appVersion: null
+};
+
 var plugin = new LoggerAirbrakePlugin(config);
 Logger.use(plugin);
 
@@ -39,14 +56,6 @@ var log = Logger.getLogger("Name");
 log.error("Message to log %s", 'with args');
 
 console.log("End sample...");
-
-process.nextTick(function(){
-  console.log("Start sample of Async Log and delay execution...");
-  log.error("Message to log %s", 'with args');
-  process.nextTick(function(){
-    console.log("End sample of delayed execution!");
-  });
-});
 ```
 
 Download the code from this [gist]().
